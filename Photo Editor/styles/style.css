@@ -1,25 +1,25 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital@1&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 *{
     padding: 0;
     margin: 0;
-    font-family: 'vazir';
+    font-family: 'Varela Round', sans-serif;
 
 }
 body{
-    font-family: 'Space Mono', monospace;
+font-family: 'Varela Round', sans-serif;
     direction: rtl;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #9ba5ac;
+    background-image: linear-gradient(to left bottom, #051937, #002357, #0b2c77, #273397, #4837b5);
 }
 
 .container{
     width: 850px;
     padding: 30px 35px 35px;
-    background: #fff;
+    background-image: linear-gradient(to left bottom, #f9f9f9, #f3f6fb, #e8f4fd, #dbf3fa, #cff2f2);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -35,9 +35,12 @@ body{
 
 .container h2{
     margin-top: -8px;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 500;
     text-align: center;
+     background-image: radial-gradient(circle, #c7e113, #aae114, #89e01e, #60de2d, #10dc3c);background-image: linear-gradient(to left bottom, #1a14ac, #0066f0, #0095e4, #00bd9b, #10dc3c);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 
 .container .wrapper{
@@ -97,7 +100,7 @@ body{
 
 
 .filter .slider{
-    margin-top: 12px;
+    margin-top: 28px;
 }
 
 .filter .slider .filter-info{
@@ -114,7 +117,7 @@ body{
 }
 
 .editor-panel .rotate{
-    margin-top: 17px;
+    margin-top: 28px;
 }
 
 .editor-panel .rotate button{
@@ -148,6 +151,7 @@ body{
     max-height: 335px;
     width: 100%;
     height: 100%;
+   
     object-fit: contain;
 }
 
@@ -180,6 +184,11 @@ body{
     background: #6c757d;
 }
 
+.upload-icon , .download-icon{
+    width: 20px;
+    vertical-align: -4px;
+    margin-left: 5px;
+}
 .controls .choose-img{
     background: #6c757d;
     border: 1px solid #6c757d;
@@ -206,6 +215,10 @@ body{
             width: 100%;
             margin: 0 0 15px;
         }
+        .img-right,
+        .img-left {
+             display: none;
+        }
 }
 
 @media screen and (max-width : 500px) {
@@ -218,5 +231,32 @@ body{
     }
     .controls .row .save-img{
         margin-left: 0px;
+    }
+    
+}
+
+.img-right , .img-left{
+    position: absolute;
+    bottom: 0;
+    animation: move 4s linear infinite;
+    z-index: -1;
+}
+
+.img-right{
+    right: 0;
+}
+.img-left{
+    left: 0;
+    animation: move 6s linear infinite;
+}
+@keyframes move {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-40px);
+    }
+    100%{
+        transform: translateY(0px);
     }
 }
